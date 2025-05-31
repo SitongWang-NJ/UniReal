@@ -1,0 +1,87 @@
+/* components/work-status-card/work-status-card.wxss */
+.card {
+  background-color: #f2f2f2;
+  padding: 24rpx;
+  border-radius: 20rpx;
+  margin: 20rpx;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.card-title {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.card-more {
+  font-size: 28rpx;
+  color: #888;
+}
+
+.time-label {
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+
+.progress-bar {
+  margin-bottom: 30rpx;
+}
+
+.progress-bg {
+  background-color: #ddd;
+  height: 16rpx;
+  border-radius: 8rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fg {
+  background-color: #888;
+  height: 16rpx;
+  border-radius: 8rpx;
+}
+
+.progress-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 6rpx;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.info-item .label {
+  font-size: 26rpx;
+  color: #555;
+}
+
+.info-item .value {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.circle-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.circle {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx;
+}
+
+.circle-text {
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}

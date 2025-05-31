@@ -1,4 +1,4 @@
-/* pages/index/index.wxss */
+/* pages/delivery/delivery.wxss */
 .container {
   display: flex;
   flex-direction: column;

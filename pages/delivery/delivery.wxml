@@ -1,11 +1,5 @@
-<!--pages/index/index.wxml-->
+<!--pages/delivery/delivery.wxml-->
 <view class="container">
-
-<!-- 设置休息区 标题 -->
-<view class="section-title">设置休息区</view>
-
-<!-- tab 切换组件 -->
-<tab-card-switch />
 
 <!-- 工作状态卡片 -->
 <view class="section-title">工作状态</view>

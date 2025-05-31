@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "配送",
+  "usingComponents": {
+    "tab-card-switch": "/components/tab-card-switch/tab-card-switch"
+  }
+}

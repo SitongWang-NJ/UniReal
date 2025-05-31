@@ -1,0 +1,47 @@
+<!--components/work-status-card/work-status-card.wxml-->
+<view class="card">
+  <view class="card-header">
+    <text class="card-title">工作情况</text>
+    <view class="card-more" bindtap="onDetailTap">➡️</view>
+  </view>
+
+  <!-- 工作时长进度条 -->
+  <view class="time-label">工作时长</view>
+  <view class="progress-bar">
+    <view class="progress-bg">
+      <!-- ✅ 使用 wx:style 正确拼接 style 属性 -->
+      <view class="progress-fg" wx:style="'width:' + workProgress + '%'"></view>
+    </view>
+    <view class="progress-time">
+      <text>0am</text>
+      <text>6am</text>
+      <text>12am</text>
+      <text>18pm</text>
+      <text>24pm</text>
+    </view>
+  </view>
+
+  <!-- 数值信息 -->
+  <view class="info-row">
+    <view class="info-item">
+      <text class="label">骑行里程</text>
+      <text class="value">{{distance}}km</text>
+    </view>
+    <view class="info-item">
+      <text class="label">今日收入</text>
+      <text class="value">{{income}}元</text>
+    </view>
+  </view>
+
+  <!-- 圆环区域 -->
+  <view class="circle-row">
+    <view class="circle">
+      <text class="circle-text">连续骑行时长</text>
+      <progress percent="{{rideDurationPercent}}" stroke-width="6" active />
+    </view>
+    <view class="circle">
+      <text class="circle-text">收入目标</text>
+      <progress percent="{{incomeTargetPercent}}" stroke-width="6" />
+    </view>
+  </view>
+</view>

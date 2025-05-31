@@ -1,0 +1,24 @@
+<!--components/tab-card-switch/tab-card-switch.wxml-->
+<view class="container">
+  <view class="tab-bar">
+    <view 
+      class="tab-item {{ currentTab === 'restaurant' ? 'active' : '' }}" 
+      bindtap="switchTab" 
+      data-tab="restaurant">
+      餐厅休息
+    </view>
+    <view 
+      class="tab-item {{ currentTab === 'scenery' ? 'active' : '' }}" 
+      bindtap="switchTab" 
+      data-tab="scenery">
+      风景休息
+    </view>
+  </view>
+
+  <view class="card-box {{ currentTab === 'restaurant' ? 'restaurant-shape' : 'scenery-shape' }}">
+    <view class="info-line">预计到达时间</view>
+    <view class="info-line">{{ currentTab === 'restaurant' ? '餐厅名称' : '景区名称' }}</view>
+    <button class="query-button" bindtap="handleClick">查询</button>
+
+  </view>
+</view>

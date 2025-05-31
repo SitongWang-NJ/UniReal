@@ -5,7 +5,9 @@
     "pages/work/work",
     "pages/hotzone/hotzone",
     "pages/data/data",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/delivery/delivery",
+    "pages/rest/rest"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -27,6 +29,18 @@
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/delivery/delivery",
+        "text": "配送",
+        "iconPath": "images/delivery.png",
+        "selectedIconPath": "images/delivery_selected.png"
+      },
+      {
+        "pagePath": "pages/rest/rest",
+        "text": "休息服务",
+        "iconPath": "images/resupply.png",
+        "selectedIconPath": "images/resupply_selected.png"
       },
       {
         "pagePath": "pages/personal/personal",

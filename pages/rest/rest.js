@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/rest/rest.js
 Page({
   data: {
     currentTimeSlot: null,

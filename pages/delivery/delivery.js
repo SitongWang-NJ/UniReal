@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/delivery/delivery.js
 Page({
   data: {
     currentTimeSlot: null,

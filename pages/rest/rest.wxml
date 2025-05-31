@@ -1,0 +1,10 @@
+<!--pages/rest/rest.wxml-->
+<view class="container">
+
+<!-- 设置休息区 标题 -->
+<view class="section-title">设置休息区</view>
+
+<!-- tab 切换组件 -->
+<tab-card-switch />
+
+</view>

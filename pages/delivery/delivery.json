@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "配送",
+  "usingComponents": {
+    "work-status-card": "/components/work-status-card/work-status-card"
+  }
+}

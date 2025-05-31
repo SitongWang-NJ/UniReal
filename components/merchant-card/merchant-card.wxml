@@ -1,0 +1,9 @@
+<!--components/merchant-card/merchant-card.wxml-->
+<view class="merchant-card" bindtap="onTap">
+  <image class="thumbnail" src="{{image}}" mode="aspectFill" />
+  <view class="info">
+    <view class="name">{{name}}</view>
+    <view class="address">地址：{{address}}</view>
+    <view class="open-time">开放时间：{{openTime}}</view>
+  </view>
+</view>
