@@ -33,6 +33,8 @@ Page({
   },
 
   goToWorkDetail() {
-    wx.showToast({ title: '跳转至工作详情', icon: 'none' });
+    wx.navigateTo({
+      url: '/pages/work_status_detail/work_status_detail'
+    });    
   }
 });
