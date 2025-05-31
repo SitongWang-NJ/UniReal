@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "餐厅搜索",
+  "usingComponents": {
+    "merchant-card": "/components/merchant-card/merchant-card"
+  }
+}
