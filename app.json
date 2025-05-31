@@ -9,7 +9,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "智能关怀小程序",
+    "navigationBarTitleText": "智运-为配送保驾护航",
     "navigationBarTextStyle": "black"
   },
   "renderer": "webview",
