@@ -4,15 +4,36 @@
     "pages/index/index",
     "pages/work/work",
     "pages/hotzone/hotzone",
-    "pages/data/data"
+    "pages/data/data",
+    "pages/personal/personal"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#F0FFFF",
     "navigationBarTitleText": "智运-为配送保驾护航",
     "navigationBarTextStyle": "black"
   },
   "renderer": "webview",
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#00008B",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人信息",
+        "iconPath": "images/personal.png",
+        "selectedIconPath": "images/personal_selected.png"
+      }
+    ]
+  }
 }

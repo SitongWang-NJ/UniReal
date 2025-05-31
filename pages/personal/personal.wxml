@@ -1,0 +1,7 @@
+<!--pages/personal/personal.wxml-->
+<view class="container">
+用户名 
+工作编号
+历史配送
+设置
+</view>

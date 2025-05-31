@@ -14,11 +14,6 @@
   height: 200rpx;
   margin-bottom: 60rpx;
 }
-.login-tips {
-  font-size: 32rpx;
-  color: #33333;
-  margin-bottom: 60rpx;
-}
 
 .login-tips {
   font-size: 32rpx;

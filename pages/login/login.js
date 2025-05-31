@@ -19,7 +19,7 @@ Page({
             duration: 200
           })
           // 登录成功后跳转到首页
-          wx.redirectTo({
+          wx.switchTab({
             url: '/pages/index/index',
           })
         } else {
