@@ -1,7 +1,8 @@
 <!--pages/login/login.wxml-->
 <view class="container">
-  <image class="logo" src="/images/logo.png"></image>
-  <view class="login-tips">欢迎使用智运，请登录。</view>
+  <image class="logo" src="/images/logo-new.png"></image>
+  <view class="login-tips">欢迎使用UniReal智能送餐系统</view>
+  <view class="login-subtitle">为您提供高效、便捷的配送服务</view>
   <button class="login-btn" bindtap="handleWechatLogin">微信登录</button>
   <button class="login-btn" bindtap="handlePhoneLogin">手机号登录</button>
 </view>

@@ -10,14 +10,24 @@
   background-color: #ffffff;
 }
 .logo {
-  width: 200rpx;
-  height: 200rpx;
+  width: 240rpx;
+  height: 240rpx;
   margin-bottom: 60rpx;
+  border-radius: 20rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.1);
 }
 
 .login-tips {
-  font-size: 32rpx;
+  font-size: 36rpx;
   color: #333333;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-weight: bold;
+}
+
+.login-subtitle {
+  font-size: 28rpx;
+  color: #666666;
   margin-bottom: 60rpx;
   text-align: center;
 }
