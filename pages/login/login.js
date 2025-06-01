@@ -31,7 +31,7 @@ Page({
               // 登录成功后跳转到首页
               setTimeout(() => {
                 wx.switchTab({
-                  url: '/pages/index/index',
+                  url: '/pages/home/home',
                 })
               }, 200)
             },
@@ -46,7 +46,7 @@ Page({
               // 即使授权失败，也跳转到首页
               setTimeout(() => {
                 wx.switchTab({
-                  url: '/pages/index/index',
+                  url: '/pages/home/home',
                 })
               }, 200)
             }
@@ -61,7 +61,7 @@ Page({
           // 即使微信登录失败，也跳转到首页
           setTimeout(() => {
             wx.switchTab({
-              url: '/pages/index/index',
+              url: '/pages/home/home',
             })
           }, 200)
         }
@@ -77,7 +77,7 @@ Page({
         // 即使微信登录接口调用失败，也跳转到首页
         setTimeout(() => {
           wx.switchTab({
-            url: '/pages/index/index',
+            url: '/pages/home/home',
           })
         }, 200)
       }

@@ -1,4 +1,4 @@
-// pages/index/index.js
+// pages/home/home.js
 Page({
   data: {
     currentTimeSlot: null,
