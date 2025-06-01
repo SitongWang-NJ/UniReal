@@ -1,0 +1,28 @@
+<GaodeHeader class="noDaohang" bindchangeType="changeGaodeType" type="{{gaode_type}}" NavigationOrNot="{{daohang}}"></GaodeHeader>
+<view class="section">
+  <!-- 当前位置 -->
+  <GaodeInputTips bindcustomEvent="handleCustomEvent" city="{{city}}" longitude="{{longitude}}" latitude="{{latitude}}" defaultValue="{{'当前位置'}}" inputType="start"></GaodeInputTips>
+  <!-- 目的地 -->
+  <GaodeInputTips bindcustomEvent="handleCustomEvent" city="{{city_e}}" longitude="{{longitude_e}}" latitude="{{latitude_e}}" defaultValue="{{'目的地'}}" inputType="end"></GaodeInputTips>
+</view>
+<view class="map_container">
+  <map wx:if="{{gaode_type !== 'bus' && mapState}}" class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap" polyline="{{polyline}}" include-points="{{includePoints}}"></map>
+  <!-- 公交 -->
+  <view wx:if="{{gaode_type === 'bus' && mapState}}">
+    <view class="text_box" wx:for="{{transits}}" wx:for-item="i" wx:key="i">
+      <text class="text_item" wx:for="{{i.transport}}" wx:for-item="j" wx:key="j">
+        {{j}}
+      </text>
+    </view>
+  </view>
+  <!-- 搜索错误 -->
+  <view wx:if="{{!mapState}}">搜索中...</view>
+</view>
+<view class="map_text">
+  <text class="h1">{{textData.name}}</text>
+  <text>{{textData.desc}}</text>
+  <view class="text_box" wx:if="{{daohang}}">
+    <view class="text">{{distance}}</view>
+    <view class="text">{{cost}}</view>
+  </view>
+</view>
