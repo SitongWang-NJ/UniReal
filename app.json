@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/login/login",
-    "pages/index/index",
+    "pages/home/home",
     "pages/work/work",
     "pages/hotzone/hotzone",
     "pages/data/data",
@@ -28,7 +27,7 @@
     "position": "bottom",
     "list": [
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/home/home",
         "text": "首页",
         "iconPath": "images/home.png",
         "selectedIconPath": "images/home_selected.png"
