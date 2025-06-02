@@ -1,0 +1,13 @@
+<!--components/search-header/search-header.wxml-->
+<view class="search-header">
+  <view class="city" bindtap="onSelectCity">
+    {{city}} <text class="arrow">⌄</text>
+  </view>
+
+  <view class="search-box" bindtap="onSearch">
+    <text class="search-icon">🔍</text>
+    <text class="search-placeholder">{{placeholder}}</text>
+  </view>
+
+  <view class="avatar" bindtap="onAvatarClick">🟣</view>
+</view>

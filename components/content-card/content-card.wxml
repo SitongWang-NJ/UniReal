@@ -1,0 +1,9 @@
+<!--components/content-card/content-card.wxml-->
+<view class="content-card" bindtap="onCardTap">
+  <image class="card-image" src="{{item.image}}" mode="aspectFill" />
+  <view class="card-content">
+    <view class="card-title">{{item.name}}</view>
+    <view class="card-subtitle">{{item.address}}</view>
+    <view class="card-extra">{{item.openTime}}</view>
+  </view>
+</view>
