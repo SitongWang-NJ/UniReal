@@ -1,10 +1,44 @@
 <!--pages/rest/rest.wxml-->
-<view class="container">
+<view class="rest-page">
 
-<!-- 设置休息区 标题 -->
-<view class="section-title">设置休息区</view>
+<!-- 顶部搜索栏 -->
+<search-header
+  city="{{currentCity}}"
+  placeholder="搜索附近餐饮/休息区"
+  bind:selectCity="handleCitySelect"
+  bind:searchTap="goToSearchPage"
+  bind:avatarTap="openProfile"
+/>
 
-<!-- tab 切换组件 -->
-<tab-card-switch />
+<!-- 快捷入口图标区 -->
+<icon-grid
+  items="{{iconItems}}"
+  bind:iconClick="handleIconClick"
+/>
+
+<!-- 活动推荐标签（横滑） -->
+<promo-scroll-tabs
+  tabs="{{promoTabs}}"
+  activeId="{{selectedPromo}}"
+  bind:tabClick="onPromoTabClick"
+/>
+
+<!-- 内容分类 Tabs -->
+<category-tabs
+  tabs="{{categoryTabs}}"
+  activeId="{{selectedCategory}}"
+  bind:tabChange="onCategoryChange"
+/>
+
+<!-- 推荐内容卡片列表 -->
+<view class="card-list">
+  <content-card
+    wx:for="{{contentList}}"
+    wx:key="id"
+    item="{{item}}"
+    bind:cardClick="onCardClick"
+  />
+</view>
 
 </view>
+

@@ -1,0 +1,27 @@
+/* components/promo-scroll-tabs/promo-scroll-tabs.wxss */
+.promo-tabs {
+  white-space: nowrap;
+  overflow-x: scroll;
+  background-color: #ffffff;
+  padding: 20rpx 10rpx;
+}
+
+.tab-list {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.tab-item {
+  padding: 12rpx 28rpx;
+  margin-right: 20rpx;
+  background-color: #f2f2f2;
+  border-radius: 30rpx;
+  font-size: 26rpx;
+  color: #333;
+  white-space: nowrap;
+}
+
+.tab-item.active {
+  background-color: #007AFF;
+  color: #ffffff;
+}
