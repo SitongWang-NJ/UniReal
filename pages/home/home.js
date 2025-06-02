@@ -15,7 +15,7 @@ Page({
     latitude_e: '', // 目的地x
     longitude_e: '', // 目的地y
     textData: {},
-    gaode_type: 'car',
+    gaode_type: 'riding',
     polyline: [],
     includePoints: [],
     transits: [], // 公交车信息
@@ -92,7 +92,7 @@ Page({
     })
     this.getRoute(data.info, data.inputType)
   },
-  // 路线搜索 默认驾车
+  // 路线搜索 默认骑行
   getRoute: function (info, type) {
     var that = this;
     console.log('搜索目的地及路线', info, type)
@@ -229,9 +229,69 @@ Page({
         console.log('出现问题', info)
       }
     }
-    if (this.data.gaode_type === 'car') {
-      // 驾车
-      myAmapFun.getDrivingRoute(gaodeParams)
+    if (this.data.gaode_type === 'riding') {
+        // 骑行
+        myAmapFun.getRidingRoute({
+          origin: `${this.data.longitude},${this.data.latitude}`,
+          destination: `${this.data.longitude_e},${this.data.latitude_e}`,
+          success: function (data) {
+            console.log('骑行路径数据', data);
+            var points = [];
+            if (data && data.paths && data.paths[0] && data.paths[0].rides && data.paths[0].rides[0]) {
+              var ridePoints = data.paths[0].rides[0].polyline.split(';');
+              for (var i = 0; i < ridePoints.length; i++) {
+                var point = ridePoints[i].split(',');
+                points.push({
+                  longitude: parseFloat(point[0]),
+                  latitude: parseFloat(point[1])
+                });
+              }
+            }
+        
+            const markersData = [{
+              iconPath: "../../images/mapicon_navi_s.png",
+              id: 0,
+              latitude: that.data.latitude,
+              longitude: that.data.longitude,
+              width: 23,
+              height: 33
+            }, {
+              iconPath: "../../images/mapicon_navi_e.png",
+              id: 1,
+              latitude: that.data.latitude_e,
+              longitude: that.data.longitude_e,
+              width: 24,
+              height: 34
+            }];
+        
+            that.setData({
+              gaode_type: 'ride',
+              polyline: [{
+                points: points,
+                color: "#0091ff",
+                width: 6
+              }],
+              markers: markersData,
+              includePoints: [{
+                latitude: that.data.latitude,
+                longitude: that.data.longitude
+              }, {
+                latitude: that.data.latitude_e,
+                longitude: that.data.longitude_e
+              }],
+              distance: data.paths[0].distance + '米',
+              cost: data.paths[0].duration ? (parseInt(data.paths[0].duration / 60) + '分钟') : '',
+              mapState: true
+            });
+            that.showMarkerInfo(markersData, 1);
+          },
+          fail: function (info) {
+            console.log('骑行路径错误', info)
+          }
+        })
+    } else if (this.data.gaode_type === 'car') {
+          // 驾车
+          myAmapFun.getDrivingRoute(gaodeParams)
     } else if (this.data.gaode_type === 'walk') {
       // 步行
       myAmapFun.getWalkingRoute(gaodeParams)
@@ -273,9 +333,6 @@ Page({
         }
       })
 
-    } else if (this.data.gaode_type === 'riding') {
-      // 骑行
-      myAmapFun.getRidingRoute(gaodeParams)
     }
 
 
@@ -284,8 +341,8 @@ Page({
   getPoiData: function (keywords, searchType) {
     var that = this;
     let params = {
-      iconPathSelected: '../../imags/marker_checked.png', //如：..­/..­/images/marker_checked.png
-      iconPath: '../../imags/marker.png', //如：..­/..­/images/marker.png
+      iconPathSelected: '../../images/marker_checked.png', //如：..­/..­/images/marker_checked.png
+      iconPath: '../../images/marker.png', //如：..­/..­/images/marker.png
       success: function (data) {
         console.log('当前位置', data)
         markersData = data.markers;
@@ -339,9 +396,9 @@ Page({
     var markers = [];
     for (var j = 0; j < data.length; j++) {
       if (j == i) {
-        data[j].iconPath = "../../imags/marker_checked.png"; //如：..­/..­/images/marker_checked.png
+        data[j].iconPath = "../../images/marker_checked.png"; //如：..­/..­/images/marker_checked.png
       } else {
-        data[j].iconPath = "../../imags/marker.png"; //如：..­/..­/images/marker.png
+        data[j].iconPath = "../../images/marker.png"; //如：..­/..­/images/marker.png
       }
       markers.push(data[j]);
     }
