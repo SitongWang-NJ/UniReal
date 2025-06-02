@@ -1,0 +1,6 @@
+{
+  "usingComponents": {},
+  "navigationBarTitleText": "历史配送订单",
+  "navigationStyle": "custom",
+  "enablePullDownRefresh": true
+}

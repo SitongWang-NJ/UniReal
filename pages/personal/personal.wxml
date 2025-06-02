@@ -1,7 +1,53 @@
 <!--pages/personal/personal.wxml-->
-<view class="container">
-用户名 
-工作编号
-历史配送
-设置
+<view class="personal-container">  <!-- 顶部导航栏 -->  <view class="header">
+    <view class="back-btn" bindtap="goToHome">
+      <text class="back-icon" wx:if="{{isTabPage}}">🏠</text>
+      <text class="back-icon" wx:else>◀</text>
+    </view>
+    <view class="back-text" wx:if="{{!isTabPage}}" bindtap="goToHome">返回</view>
+    <view class="title">个人中心</view>
+  </view>
+  
+  <!-- 用户信息区域 -->
+  <view class="user-info-section">
+    <view class="avatar-container">
+      <image class="user-avatar" src="{{userInfo.avatarUrl || '/images/personal.png'}}"></image>
+    </view>
+    <view class="user-name">{{userInfo.nickName || '未登录用户'}}</view>
+  </view>
+    <!-- 个人信息列表 -->
+  <view class="info-list">    <!-- 工作编号 -->
+    <view class="info-item">
+      <view class="info-icon">
+        <text class="icon-text">🆔</text>
+      </view>
+      <view class="info-content">
+        <view class="info-label">工作编号</view>
+        <view class="info-value">{{workerId}}</view>
+      </view>
+      <view class="info-arrow"></view>
+    </view>
+    
+    <!-- 历史配送订单 -->
+    <view class="info-item" bindtap="goToHistory">
+      <view class="info-icon">
+        <text class="icon-text">📋</text>
+      </view>
+      <view class="info-content">
+        <view class="info-label">历史配送订单</view>
+      </view>
+      <view class="info-arrow">></view>
+    </view>
+    
+    <!-- 设置 -->
+    <view class="info-item" bindtap="goToSettings">
+      <view class="info-icon">
+        <text class="icon-text">⚙️</text>
+      </view>
+      <view class="info-content">
+        <view class="info-label">设置</view>
+      </view>
+      <view class="info-arrow">></view>
+    </view>
+  </view>
 </view>

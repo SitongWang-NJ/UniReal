@@ -1,0 +1,62 @@
+<!--pages/order_history/order_history.wxml-->
+<view class="container">
+  <!-- 顶部导航栏 -->  <view class="header">
+    <view class="back-btn" bindtap="goBack" hover-class="button-hover">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="title">历史配送订单</view>
+  </view>
+  
+  <!-- 订单列表 -->
+  <view class="order-list" wx:if="{{!loading && orderList.length > 0}}">
+    <view class="order-card" wx:for="{{orderList}}" wx:key="id" bindtap="viewOrderDetail" data-id="{{item.id}}">
+      <view class="order-header">
+        <view class="order-id">订单号：{{item.id}}</view>
+        <view class="order-status">{{item.status}}</view>
+      </view>
+      
+      <view class="order-content">
+        <view class="order-row">
+          <view class="label">商家：</view>
+          <view class="value">{{item.restaurant}}</view>
+        </view>
+        <view class="order-row">
+          <view class="label">配送地址：</view>
+          <view class="value">{{item.address}}</view>
+        </view>
+        <view class="order-row">
+          <view class="label">配送时间：</view>
+          <view class="value">{{item.date}} {{item.time}}</view>
+        </view>
+        <view class="order-row">
+          <view class="label">配送距离：</view>
+          <view class="value">{{item.distance}}</view>
+        </view>
+      </view>
+      
+      <view class="order-media">
+        <view class="media-label">配送凭证：</view>
+        <view class="media-preview">
+          <view class="image-preview" wx:if="{{item.images.length > 0}}">
+            <image class="preview-item" src="{{item.images[0]}}" mode="aspectFill"></image>
+            <view class="preview-count" wx:if="{{item.images.length > 1}}">+{{item.images.length - 1}}</view>
+          </view>
+          <view class="video-preview" wx:if="{{item.video}}">
+            <view class="video-icon">🎬</view>
+          </view>
+        </view>
+      </view>
+      
+      <view class="order-footer">
+        <view class="order-amount">¥{{item.amount}}</view>
+        <view class="view-detail">查看详情 ></view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 空状态 -->
+  <view class="empty-state" wx:if="{{!loading && orderList.length === 0}}">
+    <view class="empty-icon">📭</view>
+    <view class="empty-text">暂无历史订单记录</view>
+  </view>
+</view>

@@ -1,5 +1,4 @@
-{
-  "pages": [
+{  "pages": [
     "pages/login/login",
     "pages/home/home",
     "pages/work/work",
@@ -10,7 +9,10 @@
     "pages/rest/rest",
     "pages/restaurant_search/restaurant_search",
     "pages/work_status_detail/work_status_detail",
-    "pages/phoneLogin/phoneLogin"
+    "pages/phoneLogin/phoneLogin",
+    "pages/settings/settings",
+    "pages/order_history/order_history",
+    "pages/order_detail/order_detail"
   ],
   "permission": {
     "scope.userLocation": {
