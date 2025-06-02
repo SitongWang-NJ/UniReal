@@ -48,7 +48,28 @@ Page({
     that.changeMarkerColor(markersData, id);
   },
   onLoad: function () {
-    this.getPoiData() // 获取当前位置或指定位置周边 
+    this.getPoiData(); // 获取当前位置或指定位置周边 
+
+  // 调用云托管接口上报访问量
+  wx.cloud.callContainer({
+      config: {
+        env: 'prod-2gh5db6i5251e1f8'
+      },
+      path: '/api/count',
+      header: {
+        'X-WX-SERVICE': 'flask-syxg'
+      },
+      method: 'POST',
+      data: {
+        action: 'inc'
+      },
+      success(res) {
+        console.log('访问量上报成功', res);
+      },
+      fail(err) {
+        console.error('访问量上报失败', err);
+      }
+    }); 
   },
   // 切换方式
   changeGaodeType(event) {

@@ -12,6 +12,19 @@
     "pages/work_status_detail/work_status_detail",
     "pages/phoneLogin/phoneLogin"
   ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位服务"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseAddress", 
+    "choosePoi"
+  ],
+  "useExtendedLib": {
+    "weui": true
+  },
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
