@@ -1,0 +1,6 @@
+<view class="flex-style {{NavigationOrNot ? 'active' : ''}}">
+  <view class="flex-item {{gaodeType === 'car' &&NavigationOrNot ? 'active' : ''}}" bindtouchstart="goToCar">驾车</view>
+  <view class="flex-item {{gaodeType === 'walk' &&NavigationOrNot ? 'active' : ''}}" bindtouchstart="goToWalk">步行</view>
+  <view class="flex-item {{gaodeType === 'bus' &&NavigationOrNot ? 'active' : ''}}" bindtouchstart="goToBus">公交</view>
+  <view class="flex-item {{gaodeType === 'riding' &&NavigationOrNot ? 'active' : ''}}" bindtouchstart="goToRide">骑行</view>
+</view>

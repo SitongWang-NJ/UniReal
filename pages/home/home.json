@@ -1,7 +1,7 @@
 {
   "navigationBarTitleText": "智运，为配送保驾护航",
   "usingComponents": {
-    "tab-card-switch": "/components/tab-card-switch/tab-card-switch",
-    "work-status-card": "/components/work-status-card/work-status-card"
+        "GaodeHeader": "/components/GaodeHeader/GaodeHeader",
+        "GaodeInputTips": "/components/GaodeInputTips/GaodeInputTips"
   }
 }

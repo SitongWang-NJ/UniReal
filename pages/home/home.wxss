@@ -1,34 +1,49 @@
-/* pages/home/home.wxss */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 10vh;
+.section{
+  height: 80px;
+  width: 100%;
 }
-.btn-group {
-  width: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 40rpx;
+.section input{
+  width:90%;
+  margin:5px auto;
+  border:1px solid #c3c3c3;
+  height:30px;
+  border-radius: 3px;
+  padding: 0 5px;
 }
-.btn {
-  width: 80%;
-  background-color: #1aad19;
-  color: #ffffff;
-  border-radius: 10rpx;
-  padding: 20rpx 0;
-  margin: 20rpx 0;
-  text-align: center;
+.map_container{
+  position: absolute;
+  top: 115px;
+  bottom: 80px;
+  left: 0;
+  right: 0;
 }
-.container {
-  padding: 20rpx;
-  background-color: #f9f9f9;
+.map{
+  width: 100%;
+  height: 100%;
 }
-
-.section-title {
-  font-size: 32rpx;
-  font-weight: bold;
-  margin: 30rpx 10rpx 20rpx;
-  color: #333;
+.map_text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 80px;
+  background: #fff;
+  padding: 0 15px;
 }
+text{
+  margin: 5px 0;
+  display: block;
+  font-size:12px;
+}
+.h1{
+  margin: 15px 0;
+  font-size:15px;
+}
+/* 公交样式 */
+.text_box{
+  margin: 0 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #c3c3c3;
+  font-size: 13px;
+}
+.text_box .text_item{display:inline-block;line-height: 8px;}

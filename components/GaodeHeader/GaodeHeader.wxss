@@ -1,0 +1,23 @@
+.flex-style{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  opacity: 0.3;
+  pointer-events: none;
+}
+.flex-style.active {
+  background: #ffffff;
+  opacity: 1;
+  pointer-events: initial;
+}
+.flex-item{
+  height: 35px; 
+  line-height: 35px;
+  text-align: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1
+}
+.flex-item.active{
+  color:#0091ff;
+}
