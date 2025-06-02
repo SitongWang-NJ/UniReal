@@ -95,11 +95,10 @@
           </view>
         </view>
       </view>
-      
-      <!-- 视频区域 -->
+        <!-- 视频区域 -->
       <view class="media-section">
         <view class="media-title">配送视频</view>
-        <view class="video-container">
+        <view class="video-container" bindtap="previewVideo">
           <video 
             id="deliveryVideo" 
             class="delivery-video" 
@@ -110,6 +109,9 @@
             object-fit="cover"
             poster="/images/delivery.png">
           </video>
+          <view class="video-fullscreen-hint">
+            <text class="hint-text">点击全屏观看</text>
+          </view>
         </view>
       </view>
     </view>
@@ -128,9 +130,48 @@
       </view>
     </view>
   </block>
-  
-  <!-- 加载状态 -->
+    <!-- 加载状态 -->
   <view class="loading-container" wx:if="{{loading}}">
     <view class="loading-text">加载中...</view>
+  </view>
+</view>
+
+<!-- 全屏图片预览 -->
+<view class="fullscreen-media-container" wx:if="{{showFullScreenImage}}">
+  <view class="fullscreen-header">
+    <view class="back-btn" bindtap="backFromMediaPreview">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="fullscreen-title">配送图片 {{currentImageIndex + 1}}/{{orderDetail.images.length}}</view>
+  </view>
+  
+  <swiper class="fullscreen-swiper" current="{{currentImageIndex}}" bindchange="swiperChange">
+    <swiper-item wx:for="{{orderDetail.images}}" wx:key="*this">
+      <image class="fullscreen-image" src="{{item}}" mode="aspectFit"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 全屏视频预览 -->
+<view class="fullscreen-media-container" wx:if="{{showFullScreenVideo}}">
+  <view class="fullscreen-header">
+    <view class="back-btn" bindtap="backFromMediaPreview">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="fullscreen-title">配送视频</view>
+  </view>
+  
+  <view class="fullscreen-video-container">
+    <video 
+      id="fullscreenVideo" 
+      class="fullscreen-video" 
+      src="{{orderDetail.video}}" 
+      binderror="videoError"
+      show-center-play-btn="{{true}}"
+      controls="{{true}}"
+      object-fit="contain"
+      autoplay="{{true}}"
+      poster="/images/delivery.png">
+    </video>
   </view>
 </view>

@@ -1,6 +1,5 @@
 // pages/order_detail/order_detail.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -10,7 +9,9 @@ Page({
     loading: true,
     videoContext: null,
     currentImageIndex: 0,
-    showFullScreenImage: false
+    showFullScreenImage: false,
+    showFullScreenVideo: false,
+    currentMediaType: '' // 'image' 或 'video'
   },
 
   /**
@@ -152,7 +153,6 @@ Page({
       });
     }
   },
-
   /**
    * 预览图片
    */
@@ -162,12 +162,8 @@ Page({
     
     this.setData({
       currentImageIndex: index,
-      showFullScreenImage: true
-    });
-    
-    wx.previewImage({
-      current: urls[index],
-      urls: urls
+      showFullScreenImage: true,
+      currentMediaType: 'image'
     });
   },
 
@@ -179,6 +175,42 @@ Page({
       showFullScreenImage: false
     });
   },
+  
+  /**
+   * 预览视频
+   */
+  previewVideo() {
+    this.setData({
+      showFullScreenVideo: true,
+      currentMediaType: 'video'
+    });
+    
+    // 延迟一下再播放视频，确保DOM已更新
+    setTimeout(() => {
+      const fullscreenVideoContext = wx.createVideoContext('fullscreenVideo');
+      fullscreenVideoContext.play();
+    }, 300);
+  },
+  
+  /**
+   * 关闭视频预览
+   */
+  closeVideoPreview() {
+    this.setData({
+      showFullScreenVideo: false
+    });
+  },
+  
+  /**
+   * 返回媒体预览
+   */
+  backFromMediaPreview() {
+    if (this.data.currentMediaType === 'image') {
+      this.closeImagePreview();
+    } else if (this.data.currentMediaType === 'video') {
+      this.closeVideoPreview();
+    }
+  },
 
   /**
    * 播放视频
@@ -186,7 +218,6 @@ Page({
   playVideo() {
     this.data.videoContext.play();
   },
-
   /**
    * 视频播放错误
    */
@@ -195,6 +226,15 @@ Page({
     wx.showToast({
       title: '视频加载失败',
       icon: 'none'
+    });
+  },
+  
+  /**
+   * 滑动切换图片
+   */
+  swiperChange(e) {
+    this.setData({
+      currentImageIndex: e.detail.current
     });
   }
 })
