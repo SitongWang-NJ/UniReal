@@ -1,0 +1,28 @@
+/* components/category-tabs/category-tabs.wxss */
+.category-tabs {
+  white-space: nowrap;
+  overflow-x: scroll;
+  background-color: #ffffff;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.tab-list {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 20rpx;
+}
+
+.tab-item {
+  margin-right: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  padding-bottom: 10rpx;
+  border-bottom: 4rpx solid transparent;
+}
+
+.tab-item.active {
+  color: #007AFF;
+  font-weight: bold;
+  border-bottom-color: #007AFF;
+}

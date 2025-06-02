@@ -1,0 +1,28 @@
+/* components/icon-grid/icon-grid.wxss */
+.icon-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20rpx 10rpx;
+  background-color: #fff;
+}
+
+.icon-item {
+  width: 22%;
+  margin-bottom: 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon-image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-bottom: 10rpx;
+}
+
+.icon-text {
+  font-size: 24rpx;
+  color: #333;
+  text-align: center;
+}

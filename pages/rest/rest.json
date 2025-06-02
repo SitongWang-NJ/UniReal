@@ -1,6 +1,11 @@
 {
-  "navigationBarTitleText": "配送",
+  "navigationBarTitleText": "休息服务",
   "usingComponents": {
-    "tab-card-switch": "/components/tab-card-switch/tab-card-switch"
+    "search-header": "/components/search-header/search-header",
+    "icon-grid": "/components/icon-grid/icon-grid",
+    "promo-scroll-tabs": "/components/promo-scroll-tabs/promo-scroll-tabs",
+    "category-tabs": "/components/category-tabs/category-tabs",
+    "content-card": "/components/content-card/content-card"
   }
 }
+

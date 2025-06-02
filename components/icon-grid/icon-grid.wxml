@@ -1,0 +1,7 @@
+<!--components/icon-grid/icon-grid.wxml-->
+<view class="icon-grid">
+  <view class="icon-item" wx:for="{{items}}" wx:key="id" bindtap="onIconTap" data-id="{{item.id}}">
+    <image class="icon-image" src="{{item.icon}}" mode="aspectFit" />
+    <text class="icon-text">{{item.text}}</text>
+  </view>
+</view>
