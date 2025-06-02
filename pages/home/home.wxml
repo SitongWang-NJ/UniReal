@@ -1,20 +1,28 @@
 <!--pages/home/home.wxml-->
-<view class="container">
-
-<!-- 设置休息区 标题 -->
-<view class="section-title">设置休息区</view>
-
-<!-- tab 切换组件 -->
-<tab-card-switch />
-
-<!-- 工作状态卡片 -->
-<view class="section-title">工作状态</view>
-<work-status-card
-  work-progress="60"
-  distance="22.4"
-  income="89.5"
-  ride-duration-percent="70"
-  income-target-percent="50"
-  bind:detailClick="goToWorkDetail"
-/>
-</view>
+<view class="page-body">
+  <view calss="page-section page-section-gap"></view>
+    <map 
+      id="Navigation"
+      style="width:100%; height: 900rpx;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      bindtap="mapBindtap"
+      bindmarkertap="markertap"
+      bindcallouttap="callouttap"
+      bindlabeltap="labeltap"
+      markers="{{markers}}"
+      scale="16"
+      enable-traffic
+    >
+      <cover-view slot="callout">
+        <block wx:for="{{customCalloutMarkerIds}}" wx:key="*this">
+          <cover-view class="customCallout" marker-id="{{item}}" >
+            <cover-image class="icon" src="/image/voice.png">
+            </cover-image><cover-view class="content">
+            {{num}}-{{item}}-{{index}}
+            </cover-view>
+          </cover-view>
+        </block>
+      </cover-view>
+    </map>
+  </view>
