@@ -1,9 +1,9 @@
 <!--pages/personal/personal.wxml-->
 <view class="personal-container">  <!-- 顶部导航栏 -->  <view class="header">
-    <view class="back-btn" bindtap="goToHome">
+    <!-- <view class="back-btn" bindtap="goToHome">
       <text class="back-icon" wx:if="{{isTabPage}}">🏠</text>
       <text class="back-icon" wx:else>◀</text>
-    </view>
+    </view> -->
     <view class="back-text" wx:if="{{!isTabPage}}" bindtap="goToHome">返回</view>
     <view class="title">个人中心</view>
   </view>

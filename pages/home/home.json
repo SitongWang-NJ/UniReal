@@ -1,7 +1,6 @@
 {
-  "navigationBarTitleText": "智运，为配送保驾护航",
   "usingComponents": {
-        "GaodeHeader": "/components/GaodeHeader/GaodeHeader",
-        "GaodeInputTips": "/components/GaodeInputTips/GaodeInputTips"
+    "GaodeHeader": "/components/GaodeHeader/GaodeHeader",
+    "GaodeInputTips": "/components/GaodeInputTips/GaodeInputTips"
   }
 }

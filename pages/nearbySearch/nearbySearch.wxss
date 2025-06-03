@@ -1,0 +1,100 @@
+.container {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.header {
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  display: block;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+  display: block;
+}
+
+.list-container {
+  height: calc(100vh - 120rpx);
+  padding: 20rpx 0;
+}
+
+.location-item {
+  background-color: #fff;
+  margin: 0 20rpx 20rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.location-info {
+  flex: 1;
+  padding-right: 20rpx;
+}
+
+.location-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.location-address {
+  font-size: 28rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  line-height: 1.4;
+}
+
+.location-bottom {
+  display: flex;
+  align-items: center;
+  margin-top: 10rpx;
+}
+
+.location-distance {
+  font-size: 28rpx;
+  color: #ff6700;
+  margin-right: 20rpx;
+}
+
+.location-tel {
+  font-size: 26rpx;
+  color: #0091ff;
+}
+
+.location-action {
+  flex-shrink: 0;
+}
+
+.select-btn {
+  background-color: #0091ff;
+  color: #fff;
+  padding: 15rpx 30rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+}
+
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: #999;
+}

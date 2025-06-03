@@ -63,16 +63,26 @@ Component({
         });
         return false
       }
+      
+      // 获取当前城市
+      var currentCity = wx.getStorageSync('currentCity') || city || '广州';
+      var currentLocation = this.properties.longitude + ',' + this.properties.latitude;
+      
       var key = config.Config.key;
       var myAmapFun = new amapFile.AMapWX({key: key});
       myAmapFun.getInputtips({
         keywords: keywords,
-        location: lonlat,
-        city: city,
+        location: currentLocation,
+        city: currentCity,
+        citylimit: true, // 限制在当前城市
         success: function(data){
           if(data && data.tips){
+            // 过滤掉没有详细地址和位置的结果
+            var filteredTips = data.tips.filter(function(item) {
+              return item.address && item.location && item.district;
+            });
             that.setData({
-              tips: data.tips
+              tips: filteredTips
             });
           }
         }
