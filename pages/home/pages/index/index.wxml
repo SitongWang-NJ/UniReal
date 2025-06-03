@@ -1,0 +1,44 @@
+<!-- 移除 GaodeHeader 组件 -->
+<view class="section">
+  <!-- 当前位置 -->
+  <GaodeInputTips bindcustomEvent="handleCustomEvent" city="{{city}}" longitude="{{longitude}}" latitude="{{latitude}}" defaultValue="{{'当前位置'}}" inputType="start"></GaodeInputTips>
+  <!-- 目的地 -->
+  <GaodeInputTips bindcustomEvent="handleCustomEvent" city="{{city_e}}" longitude="{{longitude_e}}" latitude="{{latitude_e}}" defaultValue="{{'目的地'}}" inputType="end"></GaodeInputTips>
+</view>
+
+<!-- 快捷功能区 -->
+<view class="quick-functions">
+  <view class="function-item" bindtap="findNearbyRestaurant">
+    <image src="../../img/restaurant.png" class="function-icon"></image>
+    <text>餐厅</text>
+  </view>
+  <view class="function-item" bindtap="findGasStation">
+    <image src="../../img/gas.png" class="function-icon"></image>
+    <text>加油站</text>
+  </view>
+  <view class="function-item" bindtap="findToilet">
+    <image src="../../img/toilet.png" class="function-icon"></image>
+    <text>卫生间</text>
+  </view>
+  <view class="function-item" bindtap="findParking">
+    <image src="../../img/parking.png" class="function-icon"></image>
+    <text>停车场</text>
+  </view>
+</view>
+
+<view class="map_container">
+  <!-- 只保留地图，移除公交相关的条件判断 -->
+  <map wx:if="{{mapState}}" class="map" id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap" polyline="{{polyline}}" include-points="{{includePoints}}"></map>
+  <!-- 搜索错误 -->
+  <view wx:if="{{!mapState}}" class="loading-container">搜索中...</view>
+</view>
+
+<view class="map_text">
+  <text class="h1">{{textData.name}}</text>
+  <text>{{textData.desc}}</text>
+  <view class="text_box" wx:if="{{daohang}}">
+    <view class="text">{{distance}}</view>
+    <view class="text">{{cost}}</view>
+    <view class="text" wx:if="{{estimatedTime}}">预计送达：{{estimatedTime}}</view>
+  </view>
+</view>

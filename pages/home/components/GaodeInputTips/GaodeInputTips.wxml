@@ -1,0 +1,8 @@
+<view class="section">
+  <input value="{{city}}" data-city="{{city}}" data-longitude="{{longitude}}" data-latitude="{{latitude}}" placeholder="{{defaultValue}}" bindinput="bindInput"  bindfocus="handleFocus" bindblur="handleBlur"/>
+  <view class="tips_container" wx:if="{{tipsShow}}">
+    <view bindtouchstart="bindSearch" data-info="{{i}}" data-keywords="{{i.name}}" class="text_box" wx:for="{{tips}}" wx:for-item="i" wx:key="i">
+      {{i.name}}
+    </view>
+  </view>
+</view>

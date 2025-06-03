@@ -1,0 +1,9 @@
+<view class="delivery-header">
+  <view class="delivery-mode">
+    <image src="../../img/delivery.png" class="delivery-icon"></image>
+    <text class="delivery-text">外卖配送</text>
+  </view>
+  <view class="delivery-status" wx:if="{{hasRoute}}">
+    <text class="status-text">🛵 配送路线已规划</text>
+  </view>
+</view>
