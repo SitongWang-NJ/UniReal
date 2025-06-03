@@ -1,0 +1,7 @@
+<!--components/trend-chart/trend-chart.wxml-->
+<view class="trend-chart-container">
+  <view class="chart-title">近 7 日配送趋势</view>
+  <canvas type="2d" id="trendCanvas" style="width: 100%; height: 300rpx;"></canvas>
+</view>
+
+

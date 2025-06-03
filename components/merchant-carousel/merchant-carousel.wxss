@@ -1,0 +1,48 @@
+/* components/merchant-carousel/merchant-carousel.wxss */
+.carousel-container {
+  margin-top: 30rpx;
+  padding: 0 20rpx;
+}
+
+.section-title {
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.scroll-wrapper {
+  white-space: nowrap;
+}
+
+.card-wrapper {
+  display: inline-block;  /* 关键点 */
+}
+
+.merchant-card {
+  display: inline-block;  /* 必须是 inline 才能横排 */
+  vertical-align: top;
+  width: 180rpx;
+  margin-right: 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.merchant-img {
+  width: 100%;
+  height: 140rpx;
+  object-fit: cover;
+}
+
+.merchant-name {
+  font-size: 24rpx;
+  font-weight: bold;
+  padding: 10rpx;
+}
+
+.merchant-tag {
+  font-size: 22rpx;
+  color: #999;
+  padding: 0 10rpx 10rpx;
+}

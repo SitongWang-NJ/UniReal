@@ -1,38 +1,25 @@
 // pages/delivery/delivery.js
 Page({
   data: {
-    currentTimeSlot: null,
-    timeSlots: [
-      { id: 1, start: '14:40', end: '15:00' },
-      { id: 2, start: '15:00', end: '15:20' },
-      { id: 3, start: '15:20', end: '15:40' },
-    ]
-  },
-
-  onLoad(options) {
-    // 初始化
-  },
-
-  selectTimeSlot(e) {
-    const selectedId = e.currentTarget.dataset.id;
-    this.setData({
-      currentTimeSlot: selectedId
-    });
-    this.updateRecommendations(selectedId);
-  },
-
-  updateRecommendations(timeSlotId) {
-    console.log('更新推荐商家，时间段ID:', timeSlotId);
-    // 可根据时间段请求新数据
-  },
-
-  goToSearch() {
-    wx.navigateTo({
-      url: '/pages/restaurant_search/restaurant_search',
-    });
-  },
-
-  goToWorkDetail() {
-    wx.showToast({ title: '跳转至工作详情', icon: 'none' });
+    trendData: [
+      { date: '5-25', value: 10 },
+      { date: '5-26', value: 14 },
+      { date: '5-27', value: 18 },
+      { date: '5-28', value: 13 },
+      { date: '5-29', value: 17 },
+      { date: '5-30', value: 22 },
+      { date: '5-31', value: 20 }
+    ],
+    insight: {
+      topRestaurant: '星巴克中山路店',
+      topDestination: '人民广场',
+      orderCount: 18,
+      rating: 98
+    },
+    traffic: {
+      roadName: '中山大道',
+      status: '车流：缓',
+      advice: '宜：安全配送，忌：疲劳驾驶'
+    }
   }
 });
