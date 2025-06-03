@@ -1,9 +1,5 @@
 <!--pages/settings/settings.wxml-->
 <view class="container">  <view class="header">
-    <view class="back-btn" bindtap="goBack">
-      <text class="back-icon">◀</text>
-    </view>
-    <view class="back-text" bindtap="goBack">个人中心</view>
     <view class="title">设置</view>
   </view>
   
@@ -27,8 +23,7 @@
               wx:key="id" 
               bindtap="handleSettingTap" 
               data-group-index="{{groupIndex}}" 
-              data-item-index="{{itemIndex}}">
-          <view class="setting-icon">
+              data-item-index="{{itemIndex}}">          <view class="setting-icon">
             <text class="icon-text">{{item.id === 'profile' ? '👤' : 
                                      item.id === 'security' ? '🔒' : 
                                      item.id === 'verification' ? '📝' : 
@@ -38,7 +33,7 @@
                                      item.id === 'clear' ? '🗑️' :
                                      item.id === 'about' ? 'ℹ️' :
                                      item.id === 'feedback' ? '📢' :                                     item.id === 'help' ? '❓' :
-                                     item.id === 'personal' ? '👤' :
+                                     item.id === 'personal' ? '◀' :
                                      item.id === 'logout' ? '🚪' : '⚙️'}}</text>
           </view>
           <view class="setting-name">{{item.name}}</view>

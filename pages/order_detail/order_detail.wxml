@@ -1,11 +1,18 @@
 <!--pages/order_detail/order_detail.wxml-->
 <view class="container">  <!-- 顶部导航栏 -->
   <view class="header">
-    <view class="back-btn" bindtap="goBack">
-      <text class="back-icon">◀</text>
-    </view>
-    <view class="back-text" bindtap="goBack">返回</view>
     <view class="title">订单详情</view>
+  </view>
+  
+  <!-- 返回选项 -->
+  <view class="return-container">
+    <view class="return-option" bindtap="goBack" hover-class="button-hover">
+      <view class="return-icon">
+        <text class="icon-text">◀</text>
+      </view>
+      <view class="return-name">{{returnOption.name}}</view>
+      <view class="return-arrow">></view>
+    </view>
   </view>
   
   <block wx:if="{{!loading && orderDetail}}">

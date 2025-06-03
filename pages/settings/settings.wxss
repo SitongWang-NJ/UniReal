@@ -20,31 +20,6 @@
   border-bottom: 1rpx solid #f0f0f0;
 }
 
-.back-btn {
-  position: absolute;
-  left: 30rpx;
-  width: 60rpx;
-  height: 60rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30rpx;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.back-icon {
-  font-size: 38rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.back-text {
-  position: absolute;
-  left: 100rpx;
-  font-size: 26rpx;
-  color: #666666;
-}
-
 .title {
   font-size: 32rpx;
   font-weight: bold;
@@ -114,6 +89,27 @@
 
 .setting-item:last-child {
   border-bottom: none;
+}
+
+/* 返回按钮特殊样式 */
+.settings-list:first-child .setting-item {
+  padding: 25rpx 30rpx;
+  background-color: #f8f8f8;
+}
+
+.settings-list:first-child .setting-name {
+  font-weight: 500;
+  color: #007aff;
+}
+
+.settings-list:first-child .setting-icon {
+  background-color: rgba(0, 122, 255, 0.1);
+}
+
+.settings-list:first-child .icon-text {
+  color: #007aff;
+  font-size: 34rpx;
+  font-weight: bold;
 }
 
 /* 设置图标 */

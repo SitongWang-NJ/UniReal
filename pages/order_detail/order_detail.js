@@ -11,7 +11,8 @@ Page({
     currentImageIndex: 0,
     showFullScreenImage: false,
     showFullScreenVideo: false,
-    currentMediaType: '' // 'image' 或 'video'
+    currentMediaType: '', // 'image' 或 'video'
+    returnOption: { id: 'history', name: '返回', icon: 'history' }
   },
 
   /**

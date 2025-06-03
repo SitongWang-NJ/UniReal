@@ -21,34 +21,60 @@
   border-bottom: 1rpx solid #f0f0f0;
 }
 
-.back-btn {
-  position: absolute;
-  left: 30rpx;
-  width: 60rpx;
-  height: 60rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 30rpx;
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.back-icon {
-  font-size: 38rpx;
-  font-weight: bold;
-  color: #333333;
-}
-
-.back-text {
-  position: absolute;
-  left: 100rpx;
-  font-size: 26rpx;
-  color: #666666;
-}
-
 .title {
   font-size: 32rpx;
   font-weight: bold;
+}
+
+/* 返回选项样式 */
+.return-container {
+  width: 100%;
+  background-color: #ffffff;
+  margin-bottom: 20rpx;
+}
+
+.return-option {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 30rpx;
+  background-color: #f8f8f8;
+  border-bottom: 1rpx solid #f0f0f0;
+  transition: all 0.3s;
+}
+
+.return-option:active, .button-hover {
+  transform: scale(0.98);
+  background-color: #f0f0f0;
+}
+
+.return-icon {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 122, 255, 0.1);
+  border-radius: 30rpx;
+}
+
+.icon-text {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #007aff;
+  line-height: 1;
+}
+
+.return-name {
+  flex: 1;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #007aff;
+}
+
+.return-arrow {
+  color: #cccccc;
+  font-size: 32rpx;
 }
 
 /* 订单状态卡片 */
@@ -58,6 +84,7 @@
   background-color: #07c160;
   box-sizing: border-box;
   color: #ffffff;
+  margin-top: 0;
 }
 
 .order-status {

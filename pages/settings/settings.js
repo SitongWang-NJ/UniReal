@@ -2,11 +2,16 @@
 Page({
   /**
    * 页面的初始数据
-   */
-  data: {
+   */  data: {
     userInfo: null,
     hasUserInfo: false,
     settingGroups: [
+      {
+        title: '',
+        items: [
+          { id: 'personal', name: '返回', icon: 'personal' }
+        ]
+      },
       {
         title: '账号设置',
         items: [
@@ -29,7 +34,6 @@ Page({
           { id: 'about', name: '关于我们', icon: 'about' },
           { id: 'feedback', name: '意见反馈', icon: 'feedback' },
           { id: 'help', name: '使用帮助', icon: 'help' },
-          { id: 'personal', name: '回到个人中心', icon: 'personal' },
           { id: 'logout', name: '退出登录', icon: 'logout' }
         ]
       }

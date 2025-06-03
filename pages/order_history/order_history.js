@@ -6,7 +6,8 @@ Page({
    */
   data: {
     orderList: [],
-    loading: true
+    loading: true,
+    returnOption: { id: 'personal', name: '返回', icon: 'personal' }
   },
 
   /**
