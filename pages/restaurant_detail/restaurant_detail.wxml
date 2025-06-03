@@ -1,0 +1,50 @@
+<!--pages/restaurant_detail/restaurant_detail.wxml-->
+<view class="restaurant-detail">
+
+<!-- 顶部操作栏 -->
+<view class="top-actions">
+  <view class="icon-btn" bindtap="goBack">←</view>
+  <view class="icon-btn" bindtap="onFavorite">⭐</view>
+  <view class="icon-btn" bindtap="onShare">📤</view>
+</view>
+
+<!-- 图片轮播 -->
+<swiper class="image-swiper" indicator-dots autoplay circular>
+  <swiper-item wx:for="{{restaurant.images}}" wx:key="index">
+    <image class="swiper-image" src="{{item}}" mode="aspectFill" />
+  </swiper-item>
+</swiper>
+
+<!-- 商户信息 -->
+<view class="info-section">
+  <view class="title">{{restaurant.name}} <text class="crown">👑</text></view>
+  <view class="subtitle">⭐ {{restaurant.rating}} · {{restaurant.comments}}条评论 · ¥{{restaurant.avgPrice}}/人</view>
+  <view class="subscores">
+    <text>口味: {{restaurant.scores.taste}}</text>
+    <text>环境: {{restaurant.scores.env}}</text>
+    <text>服务: {{restaurant.scores.service}}</text>
+    <text>食材: {{restaurant.scores.ingredient}}</text>
+  </view>
+  <view class="tags">{{restaurant.type}} · {{restaurant.area}}</view>
+  <view class="highlight">{{restaurant.rank}} · {{restaurant.visits}}</view>
+</view>
+
+<!-- 商户小贴士 -->
+<view wx:if="{{restaurant.tips}}" class="tips-section">
+  {{restaurant.tips}}
+</view>
+
+<!-- 营业信息 -->
+<view class="info-section">
+  <view class="status">状态：{{restaurant.status}}</view>
+  <view class="hours">营业时间：{{restaurant.hours}}</view>
+  <view class="address">
+    地址：{{restaurant.address}}
+    <view class="nav-buttons">
+      <button size="mini" bindtap="onMap">📍导航</button>
+      <button size="mini" bindtap="onCall">☎️电话</button>
+    </view>
+  </view>
+</view>
+
+</view>

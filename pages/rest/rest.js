@@ -39,14 +39,14 @@ Page({
         name: '星巴克中山路店',
         address: '中山路88号',
         openTime: '08:00 - 22:00',
-        image: '/images/starbucks.png'
+        image: '/images/stores/sb.jpg'
       },
       {
         id: 2,
         name: '麦当劳人民广场',
         address: '人民广场东侧',
         openTime: '07:00 - 23:00',
-        image: '/images/mcdonalds.png'
+        image: '/images/stores/M.jpg'
       }
     ]
   },
