@@ -1,14 +1,20 @@
 <!--pages/delivery/delivery.wxml-->
-<view class="container">
-
-<!-- 工作状态卡片 -->
-<view class="section-title">工作状态</view>
-<work-status-card
-  work-progress="60"
-  distance="22.4"
-  income="89.5"
-  ride-duration-percent="70"
-  income-target-percent="50"
-  bind:detailClick="goToWorkDetail"
-/>
+<view class="delivery-container">
+  <merchant-carousel />
+  <trend-chart
+    data="{{trendData}}"
+    mode="smooth"
+    color="#007AFF"
+  />
+  <delivery-insight
+    topRestaurant="{{insight.topRestaurant}}"
+    topDestination="{{insight.topDestination}}"
+    orderCount="{{insight.orderCount}}"
+    rating="{{insight.rating}}"
+  />
+  <traffic-card
+    roadName="{{traffic.roadName}}"
+    status="{{traffic.status}}"
+    advice="{{traffic.advice}}"
+  />
 </view>

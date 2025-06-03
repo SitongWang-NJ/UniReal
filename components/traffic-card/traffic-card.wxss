@@ -1,0 +1,31 @@
+/* components/traffic-card/traffic-card.wxss */
+.traffic-card {
+  background-color: #fff;
+  border-left: 8rpx solid #4CAF50;
+  padding: 24rpx;
+  margin: 20rpx;
+  border-radius: 12rpx;
+  box-shadow: 0 4rpx 10rpx rgba(0,0,0,0.05);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 28rpx;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.road {
+  color: #333;
+}
+
+.status {
+  color: #4CAF50;
+}
+
+.advice {
+  font-size: 24rpx;
+  color: #666;
+}

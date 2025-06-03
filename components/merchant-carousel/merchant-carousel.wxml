@@ -1,0 +1,19 @@
+<!--components/merchant-carousel/merchant-carousel.wxml-->
+<view class="carousel-container">
+  <text class="section-title">接单 Top 商户</text>
+  <scroll-view scroll-x="true" class="scroll-wrapper" show-scrollbar="false">
+    <view class="card-wrapper">
+      <view
+        class="merchant-card"
+        wx:for="{{merchants}}"
+        wx:key="id"
+        data-id="{{item.id}}"
+        bindtap="onCardTap"
+      >
+        <image class="merchant-img" src="{{item.image}}" mode="aspectFill" />
+        <view class="merchant-name">{{item.name}}</view>
+        <view class="merchant-tag">{{item.tag}}</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
