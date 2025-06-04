@@ -5,7 +5,7 @@ App({
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
       wx.cloud.init({
-        env: 'your-env-id', // ⚠️ 替换成你的实际环境 ID，比如 'cloud1-abc123'
+        env: 'prod-2gh5db6i5251e1f8', // ⚠️ 替换成你的实际环境 ID，比如 'cloud1-abc123'
         traceUser: true
       })
     }

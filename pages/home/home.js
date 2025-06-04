@@ -40,6 +40,25 @@ Page({
         that.getCurrentCity(res.latitude, res.longitude);
         // 获取POI数据
         that.getPoiData();
+        wx.cloud.callContainer({
+          config: {
+            env: 'prod-2gh5db6i5251e1f8' // 替换成你的环境ID
+          },
+          path: '/api/count',
+          header: {
+            'X-WX-SERVICE': 'flask-syxg' // 替换成你的服务名
+          },
+          method: 'POST',
+          data: {
+            action: 'inc'
+          },
+          success(res) {
+            console.log('访问量上报成功', res);
+          },
+          fail(err) {
+            console.error('访问量上报失败', err);
+          }
+        });
       },
       fail: function(err) {
         console.error('微信获取位置失败', err);
@@ -62,7 +81,7 @@ Page({
       }
     });
   },
-  
+ 
   // 获取当前城市
   getCurrentCity: function(lat, lng) {
     var that = this;
@@ -163,7 +182,7 @@ Page({
     
     if (type === 'start') {
       const markersData = [{
-        iconPath: "../../img/marker_checked.png",
+        iconPath: "../../imags/marker_checked.png",
         id: 0,
         latitude: parseFloat(info.location.split(',')[1]),
         longitude: parseFloat(info.location.split(',')[0]),
@@ -246,14 +265,14 @@ Page({
         
         // 设置标记点
         const markersData = [{
-          iconPath: "../../img/mapicon_navi_s.png",
+          iconPath: "../../images/mapicon_navi_s.png",
           id: 0,
           latitude: that.data.latitude,
           longitude: that.data.longitude,
           width: 23,
           height: 33
         }, {
-          iconPath: "../../img/mapicon_navi_e.png",
+          iconPath: "../../images/mapicon_navi_e.png",
           id: 1,
           latitude: that.data.latitude_e,
           longitude: that.data.longitude_e,
@@ -343,8 +362,8 @@ Page({
   getPoiData: function (keywords, searchType) {
     var that = this;
     let params = {
-      iconPathSelected: '../../img/marker_checked.png',
-      iconPath: '../../img/marker.png',
+      iconPathSelected: '../../images/marker_checked.png',
+      iconPath: '../../images/marker.png',
       success: function (data) {
         console.log('当前位置', data)
         markersData = data.markers;
@@ -390,9 +409,9 @@ Page({
     var markers = [];
     for (var j = 0; j < data.length; j++) {
       if (j == i) {
-        data[j].iconPath = "../../img/marker_checked.png";
+        data[j].iconPath = "../../images/marker_checked.png";
       } else {
-        data[j].iconPath = "../../img/marker.png";
+        data[j].iconPath = "../../images/marker.png";
       }
       markers.push(data[j]);
     }
