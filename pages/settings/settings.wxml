@@ -30,6 +30,7 @@
                                      item.id === 'notification' ? '🔔' :
                                      item.id === 'privacy' ? '🛡️' :
                                      item.id === 'language' ? '🌐' :
+                                     item.id === 'camera' ? '📸' :
                                      item.id === 'clear' ? '🗑️' :
                                      item.id === 'about' ? 'ℹ️' :
                                      item.id === 'feedback' ? '📢' :                                     item.id === 'help' ? '❓' :

@@ -1,0 +1,21 @@
+<!--components/WebVideo/WebVideo.wxml-->
+
+<!-- 图传图像 -->
+<image 
+  src="http://192.168.137.233/mjpeg/1" 
+  class="camera-feed"
+  mode="aspectFit"
+  bindload="imageLoaded"
+  binderror="imageError"
+  id="cameraImage"
+  wx:if="{{showCameraFeed}}"
+></image>
+
+<!-- 用于捕获帧的隐藏Canvas -->
+<!-- style="position: absolute; top: -9999px; width: 320px; height: 240px;" -->
+<canvas 
+  type="2d"
+  style="position: absolute; top: -9999px; width: 320px; height: 240px;" 
+  canvas-id="frameCanvas"
+  id="frameCanvas"
+></canvas>

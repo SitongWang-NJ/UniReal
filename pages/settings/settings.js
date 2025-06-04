@@ -26,6 +26,7 @@ Page({
           { id: 'notification', name: '消息通知', icon: 'notification' },
           { id: 'privacy', name: '隐私设置', icon: 'privacy' },
           { id: 'language', name: '语言设置', icon: 'language' },
+          { id: 'camera', name: '摄像头画面', icon: 'camera' },
           { id: 'clear', name: '清除缓存', icon: 'clear' }
         ]
       },      {
@@ -97,6 +98,10 @@ Page({
       case 'personal':
         this.goToPersonal();
         break;
+
+      case 'camera':
+        this.goToWebCamera();
+        break;
       
       default:
         wx.showToast({
@@ -152,6 +157,15 @@ Page({
   goToPersonal() {
     wx.switchTab({
       url: '/pages/personal/personal',
-    });
+    })
+  },
+
+  /**
+   * 跳转到摄像头画面页面
+   */
+  goToWebCamera() {
+    wx.navigateTo({
+      url: '/pages/webcamera/webcamera',
+    })
   }
 })

@@ -1,0 +1,9 @@
+/* pages/webcamera/webcamera.wxss */
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  width: 100%;
+  height: 100vh; /* 占满整个视口高度 */
+  box-sizing: border-box;
+}

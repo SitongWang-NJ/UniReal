@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "网络摄像头画面",
+  "usingComponents": {
+    "web-video": "/components/WebVideo/WebVideo"
+  }
+}
