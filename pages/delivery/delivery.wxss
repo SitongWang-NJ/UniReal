@@ -1,0 +1,5 @@
+/* pages/delivery/delivery.wxss */
+.delivery-container {
+  padding: 20rpx;
+  background-color: #fff8f0;
+}

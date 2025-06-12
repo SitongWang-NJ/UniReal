@@ -1,0 +1,20 @@
+<!--components/RiderStats/RiderStats.wxml-->
+<view class="rider-stats">
+  <view class="header">
+    <text class="monthly-label">本月已送</text>
+    <text class="amount">¥{{totalAmount}}</text>
+  </view>
+
+  <view class="chart-container">
+    <canvas type="2d" id="amountChart" class="amount-chart"></canvas>
+  </view>
+
+  <view class="favorite-store">
+    <image class="store-logo" src="{{favoriteStore.logo}}"></image>
+    <view class="store-name">{{favoriteStore.name}}</view>
+  </view>
+
+  <view class="details-button" bindtap="onDetailsTap">
+    <text>了解送单详情</text>
+  </view>
+</view>

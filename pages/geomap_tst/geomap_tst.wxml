@@ -1,0 +1,14 @@
+<!--pages/geomap_tst/geomap_tst.wxml-->
+<view class="page-container">
+  <!-- 传入两组测试数据 -->
+  <text>组件加载中…</text>
+  <geo-circle-map
+    circleData="{{myCircles}}"
+    strokeColor="#FF0000AA"
+    fillColor="#FF000033"
+    defaultRadius="300"
+    bindregionChange="handleRegionChange"
+    bindmarkerTap="handleMarkerTap"
+    class="full-map"
+  />
+</view>

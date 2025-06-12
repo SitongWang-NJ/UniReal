@@ -1,0 +1,6 @@
+/* pages/canvas/canvas.wxss */
+.page {
+  padding: 32rpx;
+  background-color: #f7f7f7;
+  min-height: 100vh;
+}

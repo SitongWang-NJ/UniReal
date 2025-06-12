@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "休息服务",
+  "usingComponents": {
+    "search-header": "/components/search-header/search-header",
+    "icon-grid": "/components/icon-grid/icon-grid",
+    "promo-scroll-tabs": "/components/promo-scroll-tabs/promo-scroll-tabs",
+    "category-tabs": "/components/category-tabs/category-tabs",
+    "content-card": "/components/content-card/content-card"
+  }
+}
+

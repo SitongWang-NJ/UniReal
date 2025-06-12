@@ -1,0 +1,9 @@
+/* pages/value-calendar-test/value-calendar-test.wxss */
+.page-container {
+  padding: 16px;
+}
+.page-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}

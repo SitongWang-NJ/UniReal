@@ -1,0 +1,77 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/home/home",
+    "pages/work/work",
+    "pages/hotzone/hotzone",
+    "pages/data/data",
+    "pages/personal/personal",
+    "pages/delivery/delivery",
+    "pages/rest/rest",
+    "pages/restaurant_search/restaurant_search",
+    "pages/work_status_detail/work_status_detail",
+    "pages/phoneLogin/phoneLogin",
+    "pages/settings/settings",
+    "pages/order_history/order_history",
+    "pages/order_detail/order_detail",
+    "pages/nearbySearch/nearbySearch",
+    "pages/webcamera/webcamera",
+    "pages/geomap_tst/geomap_tst",
+    "pages/value-calendar-test/value-calendar-test",
+    "pages/canvas/canvas"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位服务"
+    }
+  },
+  "requiredPrivateInfos": [
+    "getLocation",
+    "chooseAddress",
+    "choosePoi"
+  ],
+  "useExtendedLib": {
+    "weui": true
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffffff",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#F0FFFF",
+    "navigationBarTitleText": "智运-为配送保驾护航",
+    "navigationBarTextStyle": "black"
+  },
+  "renderer": "webview",
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#00008B",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_selected.png"
+      },
+      {
+        "pagePath": "pages/delivery/delivery",
+        "text": "配送",
+        "iconPath": "images/delivery.png",
+        "selectedIconPath": "images/delivery_selected.png"
+      },
+      {
+        "pagePath": "pages/rest/rest",
+        "text": "休息服务",
+        "iconPath": "images/resupply.png",
+        "selectedIconPath": "images/resupply_selected.png"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        "text": "个人信息",
+        "iconPath": "images/personal.png",
+        "selectedIconPath": "images/personal_selected.png"
+      }
+    ]
+  }
+}

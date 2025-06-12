@@ -1,0 +1,184 @@
+<!--pages/order_detail/order_detail.wxml-->
+<view class="container">  <!-- 顶部导航栏 -->
+  <view class="header">
+    <view class="title">订单详情</view>
+  </view>
+  
+  <!-- 返回选项 -->
+  <view class="return-container">
+    <view class="return-option" bindtap="goBack" hover-class="button-hover">
+      <view class="return-icon">
+        <text class="icon-text">◀</text>
+      </view>
+      <view class="return-name">{{returnOption.name}}</view>
+      <view class="return-arrow">></view>
+    </view>
+  </view>
+  
+  <block wx:if="{{!loading && orderDetail}}">
+    <!-- 订单基本信息 -->
+    <view class="order-info-card">
+      <view class="order-status">
+        <view class="status-icon">✅</view>
+        <view class="status-text">订单已完成</view>
+      </view>
+      <view class="order-id">订单号：{{orderDetail.id}}</view>
+      <view class="order-time">完成时间：{{orderDetail.date}} {{orderDetail.time}}</view>
+    </view>
+    
+    <!-- 配送信息 -->
+    <view class="section-card">
+      <view class="section-title">配送信息</view>
+      <view class="info-item">
+        <view class="info-label">配送员：</view>
+        <view class="info-value">张师傅（您自己）</view>
+      </view>
+      <view class="info-item">
+        <view class="info-label">配送时间：</view>
+        <view class="info-value">{{orderDetail.deliveryTime}}</view>
+      </view>
+      <view class="info-item">
+        <view class="info-label">配送距离：</view>
+        <view class="info-value">{{orderDetail.distance}}</view>
+      </view>
+    </view>
+    
+    <!-- 订单地址信息 -->
+    <view class="section-card">
+      <view class="section-title">地址信息</view>
+      <view class="address-item">
+        <view class="address-icon pickup">🏪</view>
+        <view class="address-content">
+          <view class="address-title">取货地点</view>
+          <view class="address-name">{{orderDetail.restaurant}}</view>
+          <view class="address-detail">{{orderDetail.restaurantAddress}}</view>
+        </view>
+      </view>
+      
+      <view class="divider"></view>
+      
+      <view class="address-item">
+        <view class="address-icon delivery">🏠</view>
+        <view class="address-content">
+          <view class="address-title">送货地点</view>
+          <view class="address-name">{{orderDetail.customer}} {{orderDetail.phone}}</view>
+          <view class="address-detail">{{orderDetail.address}}</view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 订单商品 -->
+    <view class="section-card">
+      <view class="section-title">订单商品</view>
+      <view class="product-list">
+        <view class="product-item" wx:for="{{orderDetail.products}}" wx:key="name">
+          <view class="product-name">{{item.name}}</view>
+          <view class="product-info">
+            <view class="product-price">¥{{item.price}}</view>
+            <view class="product-count">x{{item.count}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="order-amount">
+        <view class="amount-label">订单金额：</view>
+        <view class="amount-value">¥{{orderDetail.amount}}</view>
+      </view>
+      <view class="order-remark" wx:if="{{orderDetail.remark}}">
+        <view class="remark-label">订单备注：</view>
+        <view class="remark-value">{{orderDetail.remark}}</view>
+      </view>
+    </view>
+    
+    <!-- 配送凭证 -->
+    <view class="section-card">
+      <view class="section-title">配送凭证</view>
+      
+      <!-- 图片区域 -->
+      <view class="media-section">
+        <view class="media-title">配送图片</view>
+        <view class="image-list">
+          <view class="image-item" wx:for="{{orderDetail.images}}" wx:key="*this" bindtap="previewImage" data-index="{{index}}">
+            <image class="delivery-image" src="{{item}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+        <!-- 视频区域 -->
+      <view class="media-section">
+        <view class="media-title">配送视频</view>
+        <view class="video-container" bindtap="previewVideo">
+          <video 
+            id="deliveryVideo" 
+            class="delivery-video" 
+            src="{{orderDetail.video}}" 
+            binderror="videoError"
+            show-center-play-btn="{{true}}"
+            controls="{{true}}"
+            object-fit="cover"
+            poster="/images/delivery.png">
+          </video>
+          <view class="video-fullscreen-hint">
+            <text class="hint-text">点击全屏观看</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 订单配送流程 -->
+    <view class="section-card">
+      <view class="section-title">配送流程</view>
+      <view class="timeline">
+        <view class="timeline-item" wx:for="{{orderDetail.timeline}}" wx:key="status">
+          <view class="timeline-dot {{index === orderDetail.timeline.length - 1 ? 'active' : ''}}"></view>
+          <view class="timeline-content">
+            <view class="timeline-time">{{item.time}}</view>
+            <view class="timeline-status">{{item.status}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+    <!-- 加载状态 -->
+  <view class="loading-container" wx:if="{{loading}}">
+    <view class="loading-text">加载中...</view>
+  </view>
+</view>
+
+<!-- 全屏图片预览 -->
+<view class="fullscreen-media-container" wx:if="{{showFullScreenImage}}">
+  <view class="fullscreen-header">
+    <view class="back-btn" bindtap="backFromMediaPreview">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="fullscreen-title">配送图片 {{currentImageIndex + 1}}/{{orderDetail.images.length}}</view>
+  </view>
+  
+  <swiper class="fullscreen-swiper" current="{{currentImageIndex}}" bindchange="swiperChange">
+    <swiper-item wx:for="{{orderDetail.images}}" wx:key="*this">
+      <image class="fullscreen-image" src="{{item}}" mode="aspectFit"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+<!-- 全屏视频预览 -->
+<view class="fullscreen-media-container" wx:if="{{showFullScreenVideo}}">
+  <view class="fullscreen-header">
+    <view class="back-btn" bindtap="backFromMediaPreview">
+      <text class="back-icon">←</text>
+    </view>
+    <view class="fullscreen-title">配送视频</view>
+  </view>
+  
+  <view class="fullscreen-video-container">
+    <video 
+      id="fullscreenVideo" 
+      class="fullscreen-video" 
+      src="{{orderDetail.video}}" 
+      binderror="videoError"
+      show-center-play-btn="{{true}}"
+      controls="{{true}}"
+      object-fit="contain"
+      autoplay="{{true}}"
+      poster="/images/delivery.png">
+    </video>
+  </view>
+</view>

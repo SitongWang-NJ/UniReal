@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "rider-stats": "/components/RiderStats/RiderStats"
+  }
+}

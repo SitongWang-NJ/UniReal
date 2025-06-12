@@ -1,0 +1,11 @@
+<!--pages/value-calendar-test/value-calendar-test.wxml-->
+<view class="page-container">
+  <text class="page-title">ValueCalendar 测试页</text>
+  <!-- 传入 values，并绑定 select 事件 -->
+  <value-calendar
+    values="{{calendarValues}}"
+    bind:select="onDateSelect"
+  />
+</view>
+
+

@@ -1,0 +1,6 @@
+/* components/geo-circle-map/geo-circle-map.wxss */
+.geo-circle-map {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}

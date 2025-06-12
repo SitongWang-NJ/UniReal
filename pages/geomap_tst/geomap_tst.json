@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "geo-circle-map": "/components/geo-circle-map/geo-circle-map"
+  }
+}

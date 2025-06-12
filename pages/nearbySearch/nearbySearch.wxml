@@ -1,0 +1,26 @@
+<view class="container">
+  <view class="header">
+    <text class="title">{{searchTitle}}</text>
+    <text class="subtitle">3公里内找到{{nearbyList.length}}个地点</text>
+  </view>
+  
+  <scroll-view class="list-container" scroll-y="true">
+    <view class="location-item" wx:for="{{nearbyList}}" wx:key="id" data-index="{{index}}" bindtap="selectLocation">
+      <view class="location-info">
+        <view class="location-name">{{index + 1}}. {{item.name}}</view>
+        <view class="location-address">{{item.address}}</view>
+        <view class="location-bottom">
+          <text class="location-distance">{{item.distanceText}}</text>
+          <text class="location-tel" wx:if="{{item.tel}}" catchtap="makePhoneCall" data-tel="{{item.tel}}">📞 电话</text>
+        </view>
+      </view>
+      <view class="location-action">
+        <text class="select-btn">选择</text>
+      </view>
+    </view>
+    
+    <view wx:if="{{nearbyList.length === 0}}" class="empty-container">
+      <text class="empty-text">附近没有找到相关地点</text>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/hotzone/hotzone.wxml-->
+<view class="container">
+  <map
+    id="hotzoneMap"
+    style="width: 10%; height: 500rpx;"
+    latitude="{{latitude}}"
+    longitude="{{longitude}}"
+    markers="{{markers}}"
+    show-heatmap="{{true}}"
+    heatmap-data="{{heatmapData}}"
+  ></map>
+  <view class="analysis">
+    <view class="analysis-title">数据分析</view>
+    <view class="analysis-content">
+      根据数据分析，以下区域是配送热点：
+      <view>1. 天河区珠江新城</view>
+      <view>2. 越秀区中山二路</view>
+      <view>3. 黄埔区开发大道</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/webcamera/webcamera.wxml-->
+<view class="page">
+  <!-- 直接渲染组件 -->
+  <web-video id="webVideo"></web-video>
+</view>

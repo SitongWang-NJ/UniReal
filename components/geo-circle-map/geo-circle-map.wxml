@@ -1,0 +1,16 @@
+<!--components/geo-circle-map/geo-circle-map.wxml-->
+<view class="geo-circle-map">
+  <map
+    id="map"
+    longitude="{{longitude}}"
+    latitude="{{latitude}}"
+    scale="{{scale}}"
+    circles="{{circles}}"
+    show-location="true"
+    style="width: 100%; height: 100%;"
+    bindregionchange="onRegionChange"
+    bindmarkertap="onMarkerTap"
+  >
+    <!-- 可根据需要在这里插入覆盖物、按钮等 -->
+  </map>
+</view>

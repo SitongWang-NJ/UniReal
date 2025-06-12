@@ -1,0 +1,9 @@
+/* pages/rest/rest.wxss */
+.rest-page {
+  background-color: #f8f8f8;
+  padding-bottom: 40rpx;
+}
+
+.card-list {
+  padding: 0 20rpx;
+}

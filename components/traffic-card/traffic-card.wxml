@@ -1,0 +1,10 @@
+<!--components/traffic-card/traffic-card.wxml-->
+<view class="traffic-card">
+  <view class="header">
+    <text class="road">{{roadName}}</text>
+    <text class="status">{{status}}</text>
+  </view>
+  <view class="advice">
+    <text>{{advice}}</text>
+  </view>
+</view>

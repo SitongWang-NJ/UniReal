@@ -1,0 +1,33 @@
+/* pages/work/work.wxss */
+.container {
+  padding: 40rpx;
+}
+.task-list {
+  width: 10%;
+}
+.task-item {
+  background-color: #f8f8f8;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+}
+.task-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.task-address, .task-distance {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-action {
+  font-size: 28rpx;
+  padding: 20rpx 20rpx;
+  background-color: #1aad19;
+  color: #ffffff;
+  border-radius: 10rpx;
+}

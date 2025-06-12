@@ -1,0 +1,95 @@
+/* components/RiderStats/RiderStats.wxss */
+.rider-stats {
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 32rpx;
+  box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.05);
+}
+
+.header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.monthly-label {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.amount {
+  font-size: 40rpx;
+  color: #FF5E5E;
+  font-weight: bold;
+}
+
+.chart-container {
+  margin-top: 32rpx;
+  height: 200rpx;
+  position: relative;
+  box-shadow: 0rpx 4rpx 12rpx rgba(0, 0, 0, 0.08);
+  border-radius: 16rpx;
+
+}
+
+.amount-chart {
+  width: 100%;
+  height: 100%;
+}
+
+.favorite-store {
+  margin-top: 32rpx;
+  text-align: center;
+}
+
+.store-logo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-bottom: 12rpx;
+  border: 1px solid #eee;
+}
+
+.store-name {
+  font-size: 28rpx;
+  color: #444;
+}
+
+.details-button {
+  margin-top: 32rpx;
+  padding: 16rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 32rpx;
+  text-align: center;
+  color: #555;
+  font-size: 28rpx;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.store-logo {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-bottom: 12rpx;
+  border: 1px solid #eee;
+}
+
+.store-name {
+  font-size: 28rpx;
+  color: #444;
+}
+
+.details-button {
+  margin-top: 32rpx;
+  padding: 16rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 32rpx;
+  text-align: center;
+  color: #555;
+  font-size: 28rpx;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}

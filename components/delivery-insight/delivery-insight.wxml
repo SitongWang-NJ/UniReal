@@ -1,0 +1,24 @@
+<!--components/delivery-insight/delivery-insight.wxml-->
+<view class="insight-card">
+  <view class="insight-title">配送数据总览</view>
+  
+  <view class="insight-item">
+    <text class="label">今日接单最多：</text>
+    <text class="value">{{topRestaurant}}</text>
+  </view>
+
+  <view class="insight-item">
+    <text class="label">最常送达目的地：</text>
+    <text class="value">{{topDestination}}</text>
+  </view>
+
+  <view class="insight-item">
+    <text class="label">完成订单数：</text>
+    <text class="value">{{orderCount}} 单</text>
+  </view>
+
+  <view class="insight-item">
+    <text class="label">好评率：</text>
+    <text class="value">{{rating}}%</text>
+  </view>
+</view>

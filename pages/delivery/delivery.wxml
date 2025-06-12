@@ -1,0 +1,20 @@
+<!--pages/delivery/delivery.wxml-->
+<view class="delivery-container">
+  <merchant-carousel />
+  <trend-chart
+    data="{{trendData}}"
+    mode="smooth"
+    color="#007AFF"
+  />
+  <delivery-insight
+    topRestaurant="{{insight.topRestaurant}}"
+    topDestination="{{insight.topDestination}}"
+    orderCount="{{insight.orderCount}}"
+    rating="{{insight.rating}}"
+  />
+  <traffic-card
+    roadName="{{traffic.roadName}}"
+    status="{{traffic.status}}"
+    advice="{{traffic.advice}}"
+  />
+</view>

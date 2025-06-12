@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "merchant-carousel": "/components/merchant-carousel/merchant-carousel",
+    "trend-chart": "/components/trend-chart/trend-chart",
+    "delivery-insight": "/components/delivery-insight/delivery-insight",
+    "traffic-card": "/components/traffic-card/traffic-card"
+  }
+}

@@ -1,0 +1,33 @@
+<!--pages/phoneLogin/phoneLogin.wxml-->
+<view class="container">
+  <view class="header">
+    <image class="back-icon" src="/images/logo-new.png" bindtap="goBack"></image>
+    <view class="title">手机号登录</view>
+  </view>
+  
+  <view class="form-container">
+    <view class="input-group">
+      <view class="label">手机号码</view>
+      <input type="number" class="input" placeholder="请输入手机号码" bindinput="inputPhoneNumber" maxlength="11" />
+    </view>
+    
+    <view class="input-group">
+      <view class="label">验证码</view>
+      <view class="verify-code-container">
+        <input type="number" class="input verify-code-input" placeholder="请输入验证码" bindinput="inputVerifyCode" maxlength="6" />
+        <button class="verify-code-btn {{cooldown ? 'disabled' : ''}}" bindtap="sendVerifyCode" disabled="{{cooldown}}">
+          {{cooldown ? countdownTime + 's后重发' : '获取验证码'}}
+        </button>
+      </view>
+    </view>
+  </view>
+
+  <button class="login-btn {{canLogin ? '' : 'disabled'}}" bindtap="handleLogin" disabled="{{!canLogin}}">登录</button>
+  
+  <view class="tips">
+    <text>登录即表示您同意</text>
+    <text class="link">《用户协议》</text>
+    <text>和</text>
+    <text class="link">《隐私政策》</text>
+  </view>
+</view>

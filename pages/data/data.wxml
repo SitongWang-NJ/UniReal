@@ -1,0 +1,25 @@
+<!--pages/data/data.wxml-->
+<view class="container">
+  <view class="data-item">
+    <view class="data-label">订单数量</view>
+    <view class="data-value">{{orderCount}}</view>
+  </view>
+  <view class="data-item">
+    <view class="data-label">收入</view>
+    <view class="data-value">¥{{income}}</view>
+  </view>
+  <view class="data-item">
+    <view class="data-label">工作时长</view>
+    <view class="data-value">{{workHours}}小时</view>
+  </view>
+  <view class="suggestion">
+    <view class="suggestion-title">关怀建议</view>
+    <view class="suggestion-content">
+      根据您的工作数据，我们建议：
+      <view>1. 连续工作2小时后，请休息10分钟。</view>
+      <view>2. 注意天气变化，适时调整服装以保暖。</view>
+      <view>3. 每日工作时长超过14小时，请适当休息以保障身心健康。</view>
+    </view>
+  </view>
+  <button class="btn-remind" bindtap="remindRest">提醒我休息</button>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/work/work.wxml-->
+<view class="container">
+  <view class="task-list">
+    <view class="task-item" wx:for="{{tasks}}" wx:key="id" wx:if="{{index === currentTaskIndex}}">
+      <view class="task-title">订单号：{{item.orderId}}</view>
+      <view class="task-address">地址：{{item.address}}</view>
+      <view class="task-distance">距离：{{item.distance}}</view>
+      <view class="task-actions">
+        <button class="btn-action" bindtap="startNextTask">下一个任务</button>
+        <button class="btn-action" bindtap="completeTask">完成当前任务</button>
+      </view>
+    </view>
+  </view>
+</view>

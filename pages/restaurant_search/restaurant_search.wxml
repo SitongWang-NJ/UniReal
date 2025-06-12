@@ -1,0 +1,42 @@
+<!--pages/restaurant_search/restaurant_search.wxml-->
+<view class="page">
+
+<!-- 顶部搜索栏 -->
+<view class="search-bar">
+  <view class="icon-btn" bindtap="onBack">←</view>
+  <input class="search-input" placeholder="请输入商家名称..." bindinput="onSearchInput" />
+</view>
+
+
+<!-- 筛选项 -->
+<view class="filter-bar">
+  <view class="filter-item" bindtap="sortBy">智能排序</view>
+  <view class="filter-item" bindtap="filterByLocation">位置/距离</view>
+  <view class="filter-item" bindtap="filterByTime">时间段</view>
+</view>
+
+<!-- 搜索结果 -->
+<view class="section-title">搜索结果</view>
+<block wx:for="{{searchResults}}" wx:key="id">
+  <merchant-card
+    image="{{item.image}}"
+    name="{{item.name}}"
+    address="{{item.address}}"
+    open-time="{{item.openTime}}"
+    bind:click="goToDetail"
+  />
+</block>
+
+<!-- 推荐标题 -->
+<view class="section-title recommend">—— 为您推荐 ——</view>
+<block wx:for="{{recommendations}}" wx:key="id">
+  <merchant-card
+    image="{{item.image}}"
+    name="{{item.name}}"
+    address="{{item.address}}"
+    open-time="{{item.openTime}}"
+    bind:click="goToDetail"
+  />
+</block>
+
+</view>

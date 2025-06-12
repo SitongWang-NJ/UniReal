@@ -1,0 +1,40 @@
+<!-- components/ValueCalendar/ValueCalendar.wxml -->
+<!-- components/ValueCalendar/ValueCalendar.wxml -->
+<view class="vc-container">
+  <!-- 标题栏 -->
+  <view class="vc-header">
+    <button class="vc-nav" bindtap="prevMonth">‹</button>
+    <text class="vc-title">{{title}}</text>
+    <button class="vc-nav" bindtap="nextMonth">›</button>
+  </view>
+
+  <!-- 星期标题 -->
+  <view class="vc-weekdays">
+    <block 
+      wx:for="{{weekDays}}" 
+      wx:for-item="wd" 
+      wx:for-index="wdi" 
+      wx:key="wdi"
+    >
+      <view class="vc-weekday">{{wd}}</view>
+    </block>
+  </view>
+
+  <!-- 日期网格 -->
+  <view class="vc-grid">
+    <block wx:for="{{calendar}}" wx:for-item="week" wx:for-index="widx" wx:key="widx">
+      <view class="vc-row">
+        <block wx:for="{{week}}" wx:for-item="cell" wx:for-index="cidx" wx:key="cell.key">
+          <view
+            class="vc-cell {{!cell.date ? 'vc-empty' : ''}}"
+            data-key="{{cell.key}}"
+            style="{{cell.style}}"
+            bindtap="onCellTap"
+          >
+            <text wx:if="{{cell.date}}">{{cell.date}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
+</view>

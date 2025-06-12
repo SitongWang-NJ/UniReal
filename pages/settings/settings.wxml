@@ -1,0 +1,54 @@
+<!--pages/settings/settings.wxml-->
+<view class="container">  <view class="header">
+    <view class="title">设置</view>
+  </view>
+  
+  <!-- 用户信息区域 -->
+  <view class="user-info-section" wx:if="{{hasUserInfo}}">
+    <view class="avatar-container">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="user-name">{{userInfo.nickName}}</view>
+  </view>
+  
+  <!-- 设置列表 -->
+  <view class="settings-container">
+    <block wx:for="{{settingGroups}}" wx:for-item="group" wx:for-index="groupIndex" wx:key="title">
+      <view class="setting-group-title">{{group.title}}</view>
+      <view class="settings-list">
+        <view class="setting-item" 
+              wx:for="{{group.items}}" 
+              wx:for-item="item" 
+              wx:for-index="itemIndex" 
+              wx:key="id" 
+              bindtap="handleSettingTap" 
+              data-group-index="{{groupIndex}}" 
+              data-item-index="{{itemIndex}}">          <view class="setting-icon">
+            <text class="icon-text">{{item.id === 'profile' ? '👤' : 
+                                     item.id === 'security' ? '🔒' : 
+                                     item.id === 'verification' ? '📝' : 
+                                     item.id === 'notification' ? '🔔' :
+                                     item.id === 'canvas' ? '📈' :
+                                     item.id === 'privacy' ? '🛡️' :
+                                     item.id === 'language' ? '🌐' :
+                                     item.id === 'camera' ? '📸' :
+                                     item.id === 'geo-map' ? '🗺' :
+                                     item.id === 'calendar' ? '📅' :
+                                     item.id === 'clear' ? '🗑️' :
+                                     item.id === 'about' ? 'ℹ️' :
+                                     item.id === 'feedback' ? '📢' :                                     item.id === 'help' ? '❓' :
+                                     item.id === 'personal' ? '◀' :
+                                     item.id === 'logout' ? '🚪' : '⚙️'}}</text>
+          </view>
+          <view class="setting-name">{{item.name}}</view>
+          <view class="setting-arrow">></view>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <view class="app-version">
+    <text>版本号: v1.0.0</text>
+    <text>UniReal © 2025</text>
+  </view>
+</view>

@@ -1,0 +1,4 @@
+<!--pages/canvas/canvas.wxml-->
+<view class="page">
+  <rider-stats bind:detailsTap="onDetailsTap" />
+</view>

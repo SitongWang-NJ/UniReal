@@ -1,0 +1,14 @@
+<!--components/promo-scroll-tabs/promo-scroll-tabs.wxml-->
+<scroll-view class="promo-tabs" scroll-x="true" show-scrollbar="false">
+  <view class="tab-list">
+    <view
+      wx:for="{{tabs}}"
+      wx:key="id"
+      class="tab-item {{ activeId === item.id ? 'active' : '' }}"
+      data-id="{{item.id}}"
+      bindtap="onTabClick"
+    >
+      {{item.text}}
+    </view>
+  </view>
+</scroll-view>

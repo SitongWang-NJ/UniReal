@@ -1,0 +1,29 @@
+<!--pages/work_status_detail/work_status_detail.wxml-->
+<view class="container">
+  <!-- 模块1：工作概览 -->
+  <view class="summary-card">
+    <view class="summary-item">今日订单：{{summary.orders}} 单</view>
+    <view class="summary-item">骑行距离：{{summary.distance}} km</view>
+    <view class="summary-item">今日收入：¥{{summary.income}}</view>
+    <view class="summary-item">当前状态：{{summary.status}}</view>
+  </view>
+
+  <!-- 模块2：进度条 -->
+  <view class="progress-section">
+    <text class="progress-title">收入目标完成率</text>
+    <progress percent="{{summary.incomeProgress}}" active stroke-width="6" />
+  </view>
+
+  <!-- 模块3：接单记录列表 -->
+  <view class="order-list">
+    <view class="order-title">接单记录</view>
+    <view wx:for="{{orders}}" wx:key="id" class="order-item">
+      <view class="order-row">
+        <text>{{item.time}}</text>
+        <text>{{item.restaurant}}</text>
+        <text>¥{{item.amount}}</text>
+      </view>
+      <view class="order-sub">{{item.distance}} km · {{item.status}}</view>
+    </view>
+  </view>
+</view>

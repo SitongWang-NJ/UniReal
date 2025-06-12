@@ -1,0 +1,41 @@
+/* pages/data/data.wxss */
+.container {
+  padding: 40rpx;
+}
+.data-item {
+  background-color: #f8f8f8;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-bottom: 40rpx;
+  text-align: center;
+}
+.data-label {
+  font-size: 28rpx;
+  color: #666666;
+  margin-bottom: 20rpx;
+}
+.data-value {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+.suggestion {
+  background-color: #f8f8f8;
+  border-radius: 20rpx;
+  padding: 40rpx;
+  margin-top: 40rpx;
+}
+.suggestion-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.suggestion-content {
+  font-size: 28rpx;
+}
+.btn-remind {
+  margin-top: 60rpx;
+  background-color: #1aad19;
+  color: #ffffff;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+}

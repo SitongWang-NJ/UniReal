@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "value-calendar": "/components/ValueCalendar/ValueCalendar"
+  }
+}

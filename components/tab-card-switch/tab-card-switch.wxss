@@ -1,0 +1,73 @@
+/* components/tab-card-switch/tab-card-switch.wxss */
+.container {
+  padding: 20rpx;
+}
+
+.tab-bar {
+  display: flex;
+  background-color: #f2f2f2;
+  border-radius: 32rpx 32rpx 0 0;
+  overflow: hidden;
+}
+
+.tab-item {
+  flex: 1;
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 30rpx;
+  color: #666;
+  background-color: #e5e5e5;
+  transition: all 0.2s ease;
+  z-index: 1;
+}
+
+/* 给 tab 左右添加圆角，使非激活项也保持对称 */
+.tab-item:first-child {
+  border-top-left-radius: 32rpx;
+}
+
+.tab-item:last-child {
+  border-top-right-radius: 32rpx;
+}
+
+/* 激活的 tab 样式 */
+.tab-item.active {
+  background-color: #cccccc;
+  color: #000;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* 内容卡片区域 */
+.card-box {
+  background-color: #cccccc;
+  padding: 40rpx 30rpx;
+  border-radius: 0 0 32rpx 32rpx;
+  margin-top: -8rpx;
+  z-index: 0;
+}
+
+/* 让卡片“连接”上激活的 tab */
+.restaurant-shape {
+  border-top-left-radius: 0;
+}
+
+.scenery-shape {
+  border-top-right-radius: 0;
+}
+
+.info-line {
+  font-size: 30rpx;
+  color: #333;
+  margin-bottom: 20rpx;
+  border-bottom: 1rpx solid #999;
+  padding-bottom: 10rpx;
+}
+
+.query-button {
+  margin-top: 20rpx;
+  padding: 10rpx 40rpx;
+  border-radius: 40rpx;
+  background-color: #eee;
+  color: #333;
+}

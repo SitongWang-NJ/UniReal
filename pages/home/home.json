@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "GaodeHeader": "/components/GaodeHeader/GaodeHeader",
+    "GaodeInputTips": "/components/GaodeInputTips/GaodeInputTips"
+  }
+}
